@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Design</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(to right, #3498db, #2ecc71);
+            color: #fff;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 15px 30px;
+            background-color: #fff;
+            color: #3498db;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .option {
+            flex: 1;
+            padding: 15px 0;
+            margin: 0 10px;
+            background-color: #fff;
+            color: #3498db;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .option:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .new-content {
+            display: none;
+            background-color: #fff;
+            color: #3498db;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            button {
+                padding: 10px 20px;
+            }
+
+            .options {
+                flex-direction: column;
+            }
+
+            .option {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="initial-content">
+    <h1>Bismillah</h1>
+    <p>Fillya kenapa kamu cantik banget sii ngangenin lagi</p>
+    <button onclick="showOptions()">emang</button>
+</div>
+
+<div class="container new-content" id="updated-content">
+    <h1>Fillya</h1>
+    <p>sayang sama ilham gak</p>
+    <button onclick="optionSelected('Option 1')">BANGEETT</button>
+    <button onclick="optionSelected('Option 2')">g</button>
+</div>
+
+<script>
+    function showOptions() {
+        document.getElementById('initial-content').style.display = 'none';
+        document.getElementById('updated-content').style.display = 'block';
+    }
+
+    function optionSelected(option) {
+        if (option === 'Option 1') {
+            // Mengarahkan pengguna ke laman baru (ganti URL sesuai kebutuhan)
+            window.location.href = 'y.html';
+        } else if (option === 'Option 2') {
+            // Menampilkan peringatan untuk Opsi 2
+            alert("ihh yang bener fil");
+        }
+    }
+</script>
+
+</body>
+</html>

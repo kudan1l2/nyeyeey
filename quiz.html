@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .quiz-container {
+            width: 400px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .quiz-container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .quiz-header {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .question {
+            margin: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options li {
+            margin: 10px;
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .options li:hover {
+            background-color: #d0d0d0;
+        }
+
+        button {
+            width: 100%;
+            background-color: #4caf50;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <div class="quiz-header">
+        <h2>Quiz App</h2>
+    </div>
+
+    <div class="question">1. Ilham lahir dimana?</div>
+    <ul class="options">
+        <li><label><input type="radio" name="question1" value="jakarta"> Jambi</label></li>
+        <li><label><input type="radio" name="question1" value="bandung"> Jasuke</label></li>
+        <li><label><input type="radio" name="question1" value="surabaya"> Kelas</label></li>
+    </ul>
+
+    <div class="question">2. Tanggal berapa kita jadian</div>
+    <ul class="options">
+        <li><label><input type="radio" name="question2" value="27"> 30 Februari 2123</label></li>
+        <li><label><input type="radio" name="question2" value="34"> 29 Desember 2023</label></li>
+        <li><label><input type="radio" name="question2" value="42"> 42 November 1935</label></li>
+    </ul>
+
+    <button onclick="submitQuiz()">Submit</button>
+</div>
+
+<script>
+    // Function to show the quiz container with animation
+    function showQuizContainer() {
+        const quizContainer = document.querySelector('.quiz-container');
+        quizContainer.classList.add('show');
+    }
+
+    // Function to handle quiz submission
+    function submitQuiz() {
+        const answer1 = document.querySelector('input[name="question1"]:checked');
+        const answer2 = document.querySelector('input[name="question2"]:checked');
+
+        if (answer1 && answer2) {
+            if (answer1.value === "jakarta" && answer2.value === "34") {
+                alert("Lanjut lagi!");
+                window.location.href = "lin.html";
+            } else {
+                alert("jawabannya di cek lagi yaaa.");
+            }
+        } else {
+            alert("eitss gabisaa.");
+        }
+    }
+
+    // Show the quiz container after the page has loaded
+    window.addEventListener('load', showQuizContainer);
+</script>
+
+</body>
+</html>
